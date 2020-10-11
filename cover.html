@@ -57,7 +57,7 @@
 				
 				<option value="file0">httpbst/config/config.go (0.0%)</option>
 				
-				<option value="file1">httpbst/handler/handler.go (0.0%)</option>
+				<option value="file1">httpbst/handler/handler.go (92.9%)</option>
 				
 				<option value="file2">httpbst/main.go (0.0%)</option>
 				
@@ -135,7 +135,7 @@ type Handler struct {
         t tree.Tree
 }
 
-func NewHandler(t tree.Tree) *Handler <span class="cov0" title="0">{
+func NewHandler(t tree.Tree) *Handler <span class="cov8" title="1">{
         return &amp;Handler{t: t}
 }</span>
 
@@ -147,34 +147,34 @@ func (params Params) Validate() bool <span class="cov0" title="0">{
         return params.Val != nil
 }</span>
 
-func (h *Handler) Search(ctx echo.Context) error <span class="cov0" title="0">{
+func (h *Handler) Search(ctx echo.Context) error <span class="cov8" title="1">{
         params := ctx.Get("params").(Params)
 
-        if err := ctx.JSON(http.StatusOK, h.t.Search(*params.Val)); err != nil </span><span class="cov0" title="0">{
+        if err := ctx.JSON(http.StatusOK, h.t.Search(*params.Val)); err != nil </span><span class="cov8" title="1">{
                 return fmt.Errorf("handler: search: send response: %s", err)
         }</span>
 
-        <span class="cov0" title="0">return nil</span>
+        <span class="cov8" title="1">return nil</span>
 }
 
-func (h *Handler) Insert(ctx echo.Context) error <span class="cov0" title="0">{
+func (h *Handler) Insert(ctx echo.Context) error <span class="cov8" title="1">{
         params := ctx.Get("params").(Params)
 
-        if err := ctx.JSON(http.StatusOK, h.t.Insert(*params.Val)); err != nil </span><span class="cov0" title="0">{
+        if err := ctx.JSON(http.StatusOK, h.t.Insert(*params.Val)); err != nil </span><span class="cov8" title="1">{
                 return fmt.Errorf("handler: insert: send response: %s", err)
         }</span>
 
-        <span class="cov0" title="0">return nil</span>
+        <span class="cov8" title="1">return nil</span>
 }
 
-func (h *Handler) Delete(ctx echo.Context) error <span class="cov0" title="0">{
+func (h *Handler) Delete(ctx echo.Context) error <span class="cov8" title="1">{
         params := ctx.Get("params").(Params)
 
-        if err := ctx.JSON(http.StatusOK, h.t.Delete(*params.Val)); err != nil </span><span class="cov0" title="0">{
+        if err := ctx.JSON(http.StatusOK, h.t.Delete(*params.Val)); err != nil </span><span class="cov8" title="1">{
                 return fmt.Errorf("handler: delete: send response: %s", err)
         }</span>
 
-        <span class="cov0" title="0">return nil</span>
+        <span class="cov8" title="1">return nil</span>
 }
 </pre>
 		
