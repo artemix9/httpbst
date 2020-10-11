@@ -20,16 +20,16 @@ func (mw *ValidationMiddleware) Func(next echo.HandlerFunc) echo.HandlerFunc {
 		var params handler.Params
 		if err := ctx.Bind(&params); err != nil {
 			return &echo.HTTPError{
-				Code: http.StatusBadRequest,
-				Message: "parsing failed",
+				Code:     http.StatusBadRequest,
+				Message:  "parsing failed",
 				Internal: err,
 			}
 		}
 
 		if valid := params.Validate(); !valid {
 			return &echo.HTTPError{
-				Code:     http.StatusUnprocessableEntity,
-				Message:  "val must be provided",
+				Code:    http.StatusUnprocessableEntity,
+				Message: "val must be provided",
 			}
 		}
 

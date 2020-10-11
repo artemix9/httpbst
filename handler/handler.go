@@ -22,11 +22,7 @@ type Params struct {
 }
 
 func (params Params) Validate() bool {
-	if params.Val == nil {
-		return false
-	}
-
-	return true
+	return params.Val != nil
 }
 
 func (h *Handler) Search(ctx echo.Context) error {

@@ -278,6 +278,7 @@ func TestNewPureTree_Many(t *testing.T) {
 func deepEqualNode(first, second *node) bool {
 	if first == nil && second != nil ||
 		first != nil && second == nil {
+
 		return false
 	}
 
