@@ -34,7 +34,7 @@ func main() {
 	e.Use(mw.Func)
 
 	e.GET("/search", h.Search)
-	e.GET("/insert", h.Insert)
+	e.POST("/insert", h.Insert)
 	e.DELETE("/delete", h.Delete)
 
 	if err := e.Start(":8000"); err != nil {
